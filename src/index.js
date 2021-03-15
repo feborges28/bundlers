@@ -1,9 +1,9 @@
-import * as _ from 'lodash';
+import "./styles/style.scss";
+import "./styles/MARCA.scss";
 
 function component() {
     const element = document.createElement('div');
-
-    element.innerHTML = _.join(['Hello', 'webpack'], ' ');
+    //console.log(ENV);
 
     return element;
   }
