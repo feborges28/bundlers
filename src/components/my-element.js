@@ -6,6 +6,7 @@ class MyElement extends LitElement {
     return html`
       <style>${style}</style>
       <div class="my-element">Hello from MARCA!</div>
+      <h1 class="my-element">Hello world!</h1>
     `;
   }
 }
