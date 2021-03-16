@@ -28,7 +28,7 @@ function styleInject(css, ref) {
 var css_248z$2 = "body{background-color:orange}";
 styleInject(css_248z$2);
 
-var css_248z$1 = ".minha-marca-a{background-color:#ff0}";
+var css_248z$1 = ".minha-marca-b{background-color:red}";
 styleInject(css_248z$1);
 
 /**
@@ -2541,12 +2541,9 @@ var css_248z = ".my-element{background-color:#00f;color:#fff}";
 styleInject(css_248z);
 
 class MyElement extends LitElement {
-    static get styles() {
-        return [css_248z]
-    }
-
   render() {
     return html`
+      <style>${css_248z}</style>
       <div class="my-element">Hello from MyElement!</div>
     `;
   }

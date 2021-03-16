@@ -4,6 +4,7 @@ import replace from 'rollup-plugin-replace';
 import uglify from 'rollup-plugin-uglify';
 import postcss from 'rollup-plugin-postcss';
 import litcss from 'rollup-plugin-lit-css';
+import html from '@open-wc/rollup-plugin-html';
 
 // PostCSS plugins
 import simplevars from 'postcss-simple-vars';
@@ -20,7 +21,18 @@ export default {
   format: 'es',
   sourceMap: 'inline',
   plugins: [
-    litcss(),
+    html({
+      template: `
+      <html>
+        <head><title>My app</title></head>
+        <body class="${process.env.MARCA}">
+          <my-element></my-element>
+        </body>
+      </html>`,
+    }),
+    litcss({
+      include: ["src/**/*.scss", "src/**/*.css"]
+    }),
     postcss({
       plugins: [
         simplevars(),
