@@ -1,4 +1,4 @@
-import {LitElement, html, css, unsafeCSS} from 'lit-element';
+import {LitElement, html} from 'lit-element';
 import style from "./my-element.scss";
 
 class MyElement extends LitElement {
@@ -6,7 +6,6 @@ class MyElement extends LitElement {
     return html`
       <style>${style}</style>
       <div class="my-element">Hello from MARCA!</div>
-      <h1 class="my-element">Hello world!</h1>
     `;
   }
 }
