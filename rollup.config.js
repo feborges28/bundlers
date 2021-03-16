@@ -1,5 +1,3 @@
-import babel from 'rollup-plugin-babel';
-import eslint from 'rollup-plugin-eslint';
 import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
 import replace from 'rollup-plugin-replace';
@@ -15,10 +13,10 @@ import cssnano from 'cssnano';
 export default {
   input: 'src/index.js',
   output: {
-    dir: 'dist/main.min.js',
+    dir: 'dist/',
     format: 'es'
   },
-  format: 'iife',
+  format: 'es',
   sourceMap: 'inline',
   plugins: [
     postcss({

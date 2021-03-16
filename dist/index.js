@@ -28,8 +28,10 @@ function styleInject(css, ref) {
 var css_248z$1 = "body{background-color:orange}";
 styleInject(css_248z$1);
 
-var css_248z = ".minha-marca{background-color:#ff0}";
+var css_248z = ".minha-marca-b{background-color:red}";
 styleInject(css_248z);
+
+first;
 
 function component() {
     const element = document.createElement('div');
