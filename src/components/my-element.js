@@ -5,7 +5,7 @@ class MyElement extends LitElement {
   render() {
     return html`
       <style>${style}</style>
-      <div class="my-element">Hello from MyElement!</div>
+      <div class="my-element">Hello from MARCA!</div>
     `;
   }
 }
