@@ -1,5 +1,4 @@
 import resolve from 'rollup-plugin-node-resolve';
-import commonjs from 'rollup-plugin-commonjs';
 import replace from 'rollup-plugin-replace';
 import uglify from 'rollup-plugin-uglify';
 import postcss from 'rollup-plugin-postcss';
@@ -21,6 +20,10 @@ export default {
   format: 'es',
   sourceMap: 'inline',
   plugins: [
+    replace({
+      exclude: 'node_modules/**',
+      MARCA: process.env.MARCA,
+    }),
     html({
       template: `
       <html>
@@ -42,15 +45,10 @@ export default {
       ],
       extensions: [ '.css', '.scss' ],
     }),
-    commonjs(),
     resolve({
       jsnext: true,
       main: true,
       browser: true,
-    }),
-    replace({
-      exclude: 'node_modules/**',
-      MARCA: process.env.MARCA,
     }),
     (process.env.NODE_ENV === 'production' && uglify()),
   ],

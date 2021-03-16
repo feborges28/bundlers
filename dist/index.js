@@ -1,36 +1,3 @@
-function styleInject(css, ref) {
-  if ( ref === void 0 ) ref = {};
-  var insertAt = ref.insertAt;
-
-  if (!css || typeof document === 'undefined') { return; }
-
-  var head = document.head || document.getElementsByTagName('head')[0];
-  var style = document.createElement('style');
-  style.type = 'text/css';
-
-  if (insertAt === 'top') {
-    if (head.firstChild) {
-      head.insertBefore(style, head.firstChild);
-    } else {
-      head.appendChild(style);
-    }
-  } else {
-    head.appendChild(style);
-  }
-
-  if (style.styleSheet) {
-    style.styleSheet.cssText = css;
-  } else {
-    style.appendChild(document.createTextNode(css));
-  }
-}
-
-var css_248z$2 = "body{background-color:orange}";
-styleInject(css_248z$2);
-
-var css_248z$1 = ".minha-marca-b{background-color:red}";
-styleInject(css_248z$1);
-
 /**
  * @license
  * Copyright (c) 2017 The Polymer Project Authors. All rights reserved.
@@ -2537,14 +2504,41 @@ LitElement['finalized'] = true;
  */
 LitElement.render = render;
 
-var css_248z = ".my-element{background-color:#00f;color:#fff}";
+function styleInject(css, ref) {
+  if ( ref === void 0 ) ref = {};
+  var insertAt = ref.insertAt;
+
+  if (!css || typeof document === 'undefined') { return; }
+
+  var head = document.head || document.getElementsByTagName('head')[0];
+  var style = document.createElement('style');
+  style.type = 'text/css';
+
+  if (insertAt === 'top') {
+    if (head.firstChild) {
+      head.insertBefore(style, head.firstChild);
+    } else {
+      head.appendChild(style);
+    }
+  } else {
+    head.appendChild(style);
+  }
+
+  if (style.styleSheet) {
+    style.styleSheet.cssText = css;
+  } else {
+    style.appendChild(document.createTextNode(css));
+  }
+}
+
+var css_248z = ".my-element{background-color:#f97501;color:#fff;padding:40px;text-transform:uppercase;font-family:Trebuchet MS,Lucida Sans Unicode,Lucida Grande,Lucida Sans,Arial,sans-serif}";
 styleInject(css_248z);
 
 class MyElement extends LitElement {
   render() {
     return html`
-      <style>${css_248z}</style>
-      <div class="my-element">Hello from MyElement!</div>
+      <style>${styleGlobal}${brandStyle}${css_248z}</style>
+      <div class="my-element">Hello from atacadao!</div>
     `;
   }
 }

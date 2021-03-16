@@ -1,5 +1,8 @@
+@import "node_modules/ds-tokens/build/web/globals-tokens.scss";
+@import "node_modules/ds-tokens/build/web/MARCA-tokens.scss";
+
 .my-element{
-    background-color: blue;
+    background-color: $color-brand-primary-pure;
     color: white;
     padding: 40px;
     text-transform: uppercase;
