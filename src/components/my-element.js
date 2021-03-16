@@ -4,7 +4,7 @@ import style from "./my-element.scss";
 class MyElement extends LitElement {
   render() {
     return html`
-      <style>${styleGlobal}${brandStyle}${style}</style>
+      <style>${style}</style>
       <div class="my-element">Hello from MARCA!</div>
     `;
   }

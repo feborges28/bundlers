@@ -1,5 +1,5 @@
-@import "node_modules/ds-tokens/build/web/globals-tokens.scss";
-@import "node_modules/ds-tokens/build/web/MARCA-tokens.scss";
+@import "../../../ds-tokens/build/web/globals-tokens.scss";
+@import "../../../ds-tokens/build/web/MARCA-tokens.scss";
 
 .my-element{
     background-color: $color-brand-primary-pure;
